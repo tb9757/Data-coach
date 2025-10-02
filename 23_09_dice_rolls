@@ -1,0 +1,22 @@
+import numpy as np
+import matplotlib.pyplot as plt
+import os
+
+os.system("clear")
+
+rolls = np.random.randint(1, 7, size = 10000)
+'''
+bincount counts how many time positive integers appear in an array
+the output is an array where the index is the integer and the value is how many time is occurs
+'''
+counts = np.bincount(rolls)[1:]
+
+faces = np.arange(1, 7)
+
+print(f"Dice face counts: {counts}")
+
+plt.bar(faces, counts)
+plt.title("Dice Roll Frequencies")
+plt.xlabel("Dice faces")
+plt.ylabel("Count")
+plt.show()
